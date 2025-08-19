@@ -5,7 +5,7 @@ class CurrencyService:
 
     @staticmethod
     async def convert_currency(money: MoneyModel):
-        api_url = f"https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/{money.source_currency}.json"
+        api_url = f"https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/{money.source_currency.lower()}.json"
         
         async with httpx.AsyncClient() as client:
                 response = await client.get(api_url)
