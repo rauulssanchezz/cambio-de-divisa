@@ -16,6 +16,6 @@ class CurrencyService:
         )
 
         return {
-                'amount': money.amount * exchange_rate,
+                'amount': round(money.amount * exchange_rate, 2),
                 'currency': money.target_currency
                 }
